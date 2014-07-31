@@ -264,6 +264,14 @@
 @property (nonatomic, strong) NSString *underRightViewControllerStoryboardId;
 
 
+
+@property (nonatomic, strong) NSString *topViewControllerStoryboardName;
+
+@property (nonatomic, strong) NSString *underLeftViewControllerStoryboardName;
+
+@property (nonatomic, strong) NSString *underRightViewControllerStoryboardName;
+
+
 ///-----------------------------------
 /// @name Customizing Default Behavior
 ///-----------------------------------

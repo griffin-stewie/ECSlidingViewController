@@ -114,16 +114,29 @@
 #pragma mark - UIViewController
 
 - (void)awakeFromNib {
+    
     if (self.topViewControllerStoryboardId) {
-        self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:self.topViewControllerStoryboardId];
+        UIStoryboard *storyboard = self.storyboard;
+        if (self.topViewControllerStoryboardName) {
+            storyboard = [UIStoryboard storyboardWithName:self.topViewControllerStoryboardName bundle:nil];
+        }
+        self.topViewController = [storyboard instantiateViewControllerWithIdentifier:self.topViewControllerStoryboardId];
     }
     
     if (self.underLeftViewControllerStoryboardId) {
-        self.underLeftViewController = [self.storyboard instantiateViewControllerWithIdentifier:self.underLeftViewControllerStoryboardId];
+        UIStoryboard *storyboard = self.storyboard;
+        if (self.underLeftViewControllerStoryboardName) {
+            storyboard = [UIStoryboard storyboardWithName:self.underLeftViewControllerStoryboardName bundle:nil];
+        }
+        self.underLeftViewController = [storyboard instantiateViewControllerWithIdentifier:self.underLeftViewControllerStoryboardId];
     }
     
     if (self.underRightViewControllerStoryboardId) {
-        self.underRightViewController = [self.storyboard instantiateViewControllerWithIdentifier:self.underRightViewControllerStoryboardId];
+        UIStoryboard *storyboard = self.storyboard;
+        if (self.underRightViewControllerStoryboardName) {
+            storyboard = [UIStoryboard storyboardWithName:self.underRightViewControllerStoryboardName bundle:nil];
+        }
+        self.underRightViewController = [storyboard instantiateViewControllerWithIdentifier:self.underRightViewControllerStoryboardId];
     }
 }
 
